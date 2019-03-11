@@ -1,4 +1,5 @@
 __pycache__
+GitProj
 Papers
 .ipynb_checkpoints
 
@@ -7,3 +8,5 @@ Papers
 
 *.jpg
 *.png
+
+*.xmind
