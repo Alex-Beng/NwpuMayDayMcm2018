@@ -1,3 +1,6 @@
+import numpy as np
+from sklearn.decomposition import PCA
+
 class DataPresentation:
     def __init__(self):
         pass
@@ -7,3 +10,6 @@ class DataPresentation:
         pass
     def VecPic(self):
         pass
+
+if __name__ == "__main__":
+    pass
