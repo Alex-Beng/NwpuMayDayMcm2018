@@ -1,11 +1,38 @@
+import random
+
 class Feature:
     def __init__(self):
         pass
     def CountWord(self, divided_text, chapter_idx):
-        pass
-    def DivideDataset(self):
-        pass 
+        # 以词为 key ，频数为 value
+        # 然后根据频数对 key 进行排序后返回
+        word_freq = {}
+        word_list = divided_text.split()
+
+        for word in word_list:
+            if word in word_freq:
+                word_freq[word] += 1
+            else:
+                word_freq[word] = 1
+        return sorted(word_freq.items(), key=lambda k:k[1], reverse=True)
+    def DivideDataset(self, data_list, testset_ratio = 0.25):
+        # random 划分测试集，剩下为训练集合
+        testset_size = len(data_list)*testset_ratio
+        
+        testset = set()
+        trainset = set()
+
+        while len(testset) < testset_size:
+            lucky_dog = random.choice(data_list)
+            testset.add(lucky_dog)
+        
+        trainset = set(data_list) - testset
+
+        return testset, trainset
     def Word2Vec(self):
         pass
     def Doc2Vec(self):
         pass 
+
+if __name__ == "__main__":
+    pass
