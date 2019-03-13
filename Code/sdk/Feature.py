@@ -1,6 +1,6 @@
 import random
 
-class Feature:
+class FeatureDraw:
     def __init__(self):
         pass
     def CountWord(self, divided_text, chapter_idx):
@@ -15,6 +15,15 @@ class Feature:
             else:
                 word_freq[word] = 1
         return sorted(word_freq.items(), key=lambda k:k[1], reverse=True)
+    
+    def Word2Vec(self):
+        pass
+    def Doc2Vec(self):
+        pass 
+
+class DataProcessing:
+    def __init__(self):
+        pass
     def DivideDataset(self, data_list, testset_ratio = 0.25):
         # random 划分测试集，剩下为训练集合
         testset_size = len(data_list)*testset_ratio
@@ -29,10 +38,9 @@ class Feature:
         trainset = set(data_list) - testset
 
         return testset, trainset
-    def Word2Vec(self):
+    def ZeroCenterd(self, raw_vecs):
         pass
-    def Doc2Vec(self):
-        pass 
-
+    def Normalized(self, raw_vecs):
+        pass
 if __name__ == "__main__":
     pass
