@@ -1,4 +1,6 @@
 import random
+import numpy as np
+import logging
 
 class FeatureDraw:
     def __init__(self):
@@ -39,8 +41,10 @@ class DataProcessing:
 
         return testset, trainset
     def ZeroCenterd(self, raw_vecs):
-        pass
+        raw_vecs -= np.mean(raw_vecs, axis=0)
+        return raw_vecs
     def Normalized(self, raw_vecs):
-        pass
+        raw_vecs /= np.std(raw_vecs, axis=0)
+        return raw_vecs
 if __name__ == "__main__":
     pass
