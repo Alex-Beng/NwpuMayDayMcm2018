@@ -2,6 +2,7 @@ __pycache__
 GitProj
 Papers
 .ipynb_checkpoints
+*.log
 
 *.ipynb
 *.pyc
