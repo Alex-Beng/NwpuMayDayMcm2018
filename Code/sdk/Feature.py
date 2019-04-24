@@ -1,6 +1,7 @@
 import random
 import numpy as np
 import logging
+import gensim
 
 class FeatureDraw:
     def __init__(self):

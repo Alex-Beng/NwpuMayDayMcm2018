@@ -4,10 +4,6 @@ import re
 class TextProc():
     def __init__(self):
         pass
-    def ReadFile(self, file_path):
-        pass
-    def WriteFile(self, file_path):
-        pass
     def Divide2Chapter(self, raw_novel):
         # 通过正则匹配 第xx回 ，然后通过匹配结果的分段
         # 因为 第一回 之前的那段是标题作者etc，与正文无关，故删去
