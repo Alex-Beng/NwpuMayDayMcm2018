@@ -38,6 +38,11 @@ if __name__ == "__main__":
     text_procer = TextProc()
     
     chapters = text_procer.Divide2Chapter(raw_novel)
+    for i in range(len(chapters)):
+        chapters[i] = text_procer.RmPuntuation(chapters[i])
+        chapters[i] = text_procer.RmEnter(chapters[i])
+        chapters[i] = text_procer.Divide2Word(chapters[i])
+
 
     ioer.WriteFiles(chapters, "../../BackUpSource/Chapters/", "chapter", 1, 120)
 
