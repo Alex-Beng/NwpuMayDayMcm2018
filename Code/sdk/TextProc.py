@@ -43,10 +43,11 @@ if __name__ == "__main__":
         chapters[i] = text_procer.RmEnter(chapters[i])
         chapters[i] = text_procer.Divide2Word(chapters[i])
 
+    ioer.WriteFile("\n".join(chapters), "../../BackUpSource/chapter_in_line")
 
     ioer.WriteFiles(chapters, "../../BackUpSource/Chapters/", "chapter", 1, 120)
 
-    chapters = ioer.ReadFiles("../../BackUpSource/Chapters", 'chapter', 1, 120)
+    chapters = ioer.ReadFiles("../../BackUpSource/Chapters/", 'chapter', 1, 120)
 
     for i in chapters:
         print(i[:1])
