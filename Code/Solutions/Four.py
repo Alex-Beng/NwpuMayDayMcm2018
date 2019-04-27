@@ -16,7 +16,7 @@ feature_drawer = FeatureDraw()
 # feature_drawer.Doc2Vec("../BackUpSource/Model/doc2vec_backup.model", doc2vec_file)
 
 model = gensim.models.Doc2Vec.load("../../BackUpSource/Model/doc2vec_backup.model")
-scalars = np.array([model[word]for word in (model.wv.vocab) ])
+# scalars = np.array([model[word]for word in (model.wv.vocab) ])
 
 labels = [0]*120
 for i in range(80):

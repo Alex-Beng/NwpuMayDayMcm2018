@@ -8,7 +8,7 @@ class Cluster:
     def __init__(self, scalars):
         self.scalars = scalars 
     def Cluster(self):
-        kmeans_cluster = KMeans(n_clusters=6)
+        kmeans_cluster = KMeans(n_clusters=2)
         kmeans_cluster.fit(self.scalars)
         self.labels = kmeans_cluster.labels_
     def ToPics(self):
