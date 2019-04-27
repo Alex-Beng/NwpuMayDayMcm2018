@@ -67,9 +67,9 @@ for chapter_word_freq_dict in word_count_dict_list:
     name_freq_vecs.append(freq_vec)
 
 
-# save the vecs
-with open("../../BackupSource/name_freq_vec.data", 'wb') as f:
-    pickle.dump(name_freq_vecs, f)
+# # save the vecs
+# with open("../../BackupSource/name_freq_vec.data", 'wb') as f:
+#     pickle.dump(name_freq_vecs, f)
 
 # former80 label 1
 # latter40 label 0

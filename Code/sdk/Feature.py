@@ -23,7 +23,7 @@ class FeatureDraw:
         model = gensim.models.Word2Vec(sentences)
         model.save(save_path)
 
-    def Doc2Vec(self, sentences, save_path, file_handler):
+    def Doc2Vec(self, save_path, file_handler):
         sentences=gensim.models.doc2vec.TaggedLineDocument(file_handler)
         model = gensim.models.Doc2Vec(sentences)
         model.save(save_path)
