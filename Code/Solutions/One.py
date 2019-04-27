@@ -8,6 +8,7 @@ from sdk.Feature import FeatureDraw
 from sdk.Classifier import Classifier
 from sdk.DataPresentation import DataPresentation
 from sdk.Cluster import Cluster
+from sdk.Feature import DataProcessing
 
 # 首先是将章分出来
 
@@ -70,12 +71,6 @@ for chapter_word_freq_dict in word_count_dict_list:
 with open("../../BackupSource/name_freq_vec.data", 'wb') as f:
     pickle.dump(name_freq_vecs, f)
 
-# 先降维分析
-
-dim_downer = DataPresentation(name_freq_vecs)
-dim_downer.VecPic()
-
-
 # former80 label 1
 # latter40 label 0
 labels = [0]*120
@@ -83,11 +78,22 @@ for i in range(80):
     labels[i] = 1
 print(len(labels), len(name_freq_vecs))
 
-# 进行分类分析
 # become np array
-name_freq_vecs  = np.array(name_freq_vecs).reshape(120, len(name_list))
+name_freq_vecs  = np.array(name_freq_vecs, dtype='float64').reshape(120, len(name_list))
 labels          = np.array(labels).reshape(120, )
 
+# do data preproc
+data_preprocer = DataProcessing()
+name_freq_vecs = data_preprocer.ZeroCenterd(name_freq_vecs)
+name_freq_vecs = data_preprocer.Normalized(name_freq_vecs)
+
+
+# 先降维分析
+dim_downer = DataPresentation(name_freq_vecs)
+dim_downer.VecPic()
+
+
+# 进行分类分析
 classifier = Classifier(name_freq_vecs, labels)
 classifier.Train()
 classifier.GetAccuracy()
