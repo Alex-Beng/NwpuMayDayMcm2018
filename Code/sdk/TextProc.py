@@ -27,10 +27,22 @@ class TextProc():
         return ' '.join(divided_list)
     
 if __name__ == "__main__":
-    raw_novel_path = "../../BackUpSource/RawNovel.txt"
-    raw_novel_file = open(raw_novel_path, 'r', encoding="utf-8")
+    from IO import IO
+    ioer = IO()
 
-    raw_novel = ""
-    line = raw_novel_file.readlines()
-    raw_novel = "".join(line)
+    raw_novel_path = "../../BackUpSource/RawNovel.txt"
+
+    raw_novel = ioer.ReadFile(raw_novel_path)
+    raw_novel = "".join(raw_novel)
+
+    text_procer = TextProc()
+    
+    chapters = text_procer.Divide2Chapter(raw_novel)
+
+    ioer.WriteFiles(chapters, "../../BackUpSource/Chapters/", "chapter", 1, 120)
+
+    chapters = ioer.ReadFiles("../../BackUpSource/Chapters", 'chapter', 1, 120)
+
+    for i in chapters:
+        print(i[:1])
 

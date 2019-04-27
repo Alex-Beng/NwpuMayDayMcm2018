@@ -9,7 +9,7 @@ class IO:
     def ReadFiles(self, file_path, perfix, min_idx, max_idx):
         file_list = []
         for i in range(min_idx, max_idx+1):
-            file_list.append(self.ReadFile('%s/%s-%d')%(file_path, perfix, i))
+            file_list.append(self.ReadFile(('%s/%s-%d')%(file_path, perfix, i)))
         return file_list
 
     def WriteFile(self, data, file_path):
