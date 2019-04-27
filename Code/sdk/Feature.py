@@ -6,7 +6,7 @@ import gensim
 class FeatureDraw:
     def __init__(self):
         pass
-    def CountWord(self, divided_text, chapter_idx):
+    def CountWord(self, divided_text):
         # 以词为 key ，频数为 value
         # 然后根据频数对 key 进行排序后返回
         word_freq = {}
@@ -69,4 +69,3 @@ if __name__ == "__main__":
     
     doc2vec_file = open("../../BackUpSource/chapter_in_line", mode='r', encoding='utf-8')
     feature_drawer.Doc2Vec(chapters, "../../BackUpSource/Model/test.model", doc2vec_file)
-    

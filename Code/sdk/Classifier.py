@@ -22,7 +22,7 @@ class Classifier:
         print(len(self.train_label))
         print(self.train_data.shape)
         
-    def Train(self, save_path):
+    def Train(self):
         # self.classifier = KMeans(n_clusters=6)
         # self.classifier = AdaBoostClassifier()
         # self.classifier = MLPClassifier(hidden_layer_sizes=(100, 100, 100)) 
@@ -36,26 +36,24 @@ class Classifier:
         self.classifier.fit(self.train_data, self.train_label)
         # self.classifier.fit(self.train_data)
 
-        f = open(save_path, 'wb')
-        pickle.dump(self.classifier, f)
-        f.close()
     def GetAccuracy(self):
         print(self.classifier.score(self.train_data, self.train_label))
         print(self.classifier.score(self.test_data, self.test_label))
 
 if __name__ == "__main__":
-    train_data = []
-    train_label = []
-    data_file = open("train_data.bin", 'rb')
-    label_file = open("train_label.bin", 'rb')
-    train_data = pickle.load(data_file)
-    train_label = pickle.load(label_file)
+    pass
+    # train_data = []
+    # train_label = []
+    # data_file = open("train_data.bin", 'rb')
+    # label_file = open("train_label.bin", 'rb')
+    # train_data = pickle.load(data_file)
+    # train_label = pickle.load(label_file)
 
-    sample_num = len(train_data)
+    # sample_num = len(train_data)
 
-    train_data = np.array(train_data).reshape(sample_num, 9)
-    print(train_data.shape)
+    # train_data = np.array(train_data).reshape(sample_num, 9)
+    # print(train_data.shape)
 
-    trainer = SvmTrain(train_data, train_label)
-    trainer.Train("now.model")
-    trainer.GetAccuracy()
+    # trainer = SvmTrain(train_data, train_label)
+    # trainer.Train("now.model")
+    # trainer.GetAccuracy()

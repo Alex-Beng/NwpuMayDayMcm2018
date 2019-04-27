@@ -4,7 +4,6 @@ Papers
 .ipynb_checkpoints
 *.log
 
-*.ipynb
 *.pyc
 
 *.xmind

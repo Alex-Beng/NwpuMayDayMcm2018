@@ -25,5 +25,6 @@ class Cluster:
                     plt.scatter(two_dim_scalars[i][0], two_dim_scalars[i][1], marker='o', c='yellow')
                 else:
                     plt.scatter(two_dim_scalars[i][0], two_dim_scalars[i][1], marker='o', c='red')
+        plt.show() 
 if __name__ == "__main__":
     pass
