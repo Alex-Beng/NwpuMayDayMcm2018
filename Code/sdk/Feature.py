@@ -19,10 +19,13 @@ class FeatureDraw:
                 word_freq[word] = 1
         return sorted(word_freq.items(), key=lambda k:k[1], reverse=True)
     
-    def Word2Vec(self):
-        pass
-    def Doc2Vec(self):
-        pass 
+    def Word2Vec(self, sentences, save_path):
+        model = gensim.models.Word2Vec.Word2Vec(sentences)
+        model.save(save_path)
+
+    def Doc2Vec(self, sentences, save_path):
+        model = gensim.models.Word2Vec.Doc2Vec(sentences)
+        model.save(save_path)
 
 class DataProcessing:
     def __init__(self):
